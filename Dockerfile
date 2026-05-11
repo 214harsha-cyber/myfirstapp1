@@ -1,7 +1,7 @@
-FROM docker.io/library/centos:7
+FROM docker.io/library/centos:8
 EXPOSE 8080
 USER root
-RUN yum -y install httpd && yum clean all -y
+RUN dnf -y install httpd && dnf clean all -y
 RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf
 RUN echo "Welcome to Myfirstapp1" > /var/www/html/index.html
 RUN chmod -R a+rwx /run/httpd /etc/httpd/logs
