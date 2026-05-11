@@ -1,4 +1,4 @@
-FROM centos
+FROM docker.io/library/centos:7
 EXPOSE 8080
 USER root
 RUN yum -y install httpd && yum clean all -y
